@@ -1,0 +1,9 @@
+#!/bin/bash
+
+artist=`cat ./data/artist`
+title=`cat ./data/title`
+query="$artist $title"
+query=\'$query\'
+
+# Use the Netease_LRC.py script to download the lyrics for the song
+python3 ./data/Netease_LRC.py -m original "$query"

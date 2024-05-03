@@ -1,0 +1,29 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\Console]
+"WindowAlpha"=dword:000000cd
+"DefaultBackground"=dword:00000000
+; black dgray
+"ColorTable00"=dword:00141414
+"ColorTable08"=dword:00808080
+; blue lblue
+"ColorTable01"=dword:00800000
+"ColorTable09"=dword:00ff4040
+; green lgreen
+"ColorTable02"=dword:00008000
+"ColorTable10"=dword:0000ff00
+; cyan lcyan
+"ColorTable03"=dword:00808000
+"ColorTable11"=dword:00ffff00
+; red lred
+"ColorTable04"=dword:000000a0
+"ColorTable12"=dword:000000ff
+; magenta lmagenta
+"ColorTable05"=dword:00800080
+"ColorTable13"=dword:00ff00ff
+; yellow lyellow
+"ColorTable06"=dword:00008080
+"ColorTable14"=dword:0000ffff
+; lgray white
+"ColorTable07"=dword:00c0c0c0
+"ColorTable15"=dword:00ffffff

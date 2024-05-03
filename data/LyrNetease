@@ -1,0 +1,21 @@
+#!/bin/sh
+
+script -c ./data/pyN --force zzlyrics000.lrc
+
+# removes unnessary lines generated
+line=`grep -n "Trying to download" zzlyrics000.lrc | head -1 | cut -d: -f1`
+line=$((line +3))
+sed -i "1,$line {d}"  zzlyrics000.lrc
+sed -i '$d' zzlyrics000.lrc
+
+sed -n '7,7p' ./zzlyrics000.lrc > ./data/time
+time="[0-5][0-9]:[0-5][0-9]\.[0-9]"
+
+if grep -q "$time" ./data/time; then
+:
+else 
+	rm -f ./zzlyrics000.lrc 
+fi
+
+# check if certain error messages are present in the lyrics file, if so, delete the file
+if grep -q "No translation found\|KeyError\|KeyboardInterrupt" ./zzlyrics000.lrc; then rm -f ./zzlyrics000.lrc; fi

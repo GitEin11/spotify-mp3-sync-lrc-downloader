@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# Using kroman to convert the Korean lyrics into Romaja and save it to zzlyrics001.lrc
+kroman < zzlyrics000.lrc > zzlyrics001.lrc
+
+# some cleanup (add list if necessary)
+sed -i 's/] /]/g' zzlyrics001.lrc

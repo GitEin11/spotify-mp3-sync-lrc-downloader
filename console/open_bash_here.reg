@@ -1,0 +1,18 @@
+Windows Registry Editor Version 5.00
+
+[-HKEY_CLASSES_ROOT\Directory\shell\ubuntu_bash_here]
+[-HKEY_CLASSES_ROOT\Directory\Background\shell\ubuntu_bash_here]
+
+[HKEY_CLASSES_ROOT\Directory\shell\ubuntu_bash_here]
+@="open ba&sh here"
+"Icon"="C:\\Windows\\System32\\imageres.dll,97"
+
+[HKEY_CLASSES_ROOT\Directory\shell\ubuntu_bash_here\command]
+@="wsl cd \"$(wslpath \"%L\")\" && bash"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ubuntu_bash_here]
+@="open ba&sh here"
+"Icon"="C:\\Windows\\System32\\imageres.dll,97"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\ubuntu_bash_here\command]
+@="wsl"
