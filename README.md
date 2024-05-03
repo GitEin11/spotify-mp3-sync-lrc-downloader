@@ -5,24 +5,26 @@ This script downloads the mp3 file and the synchronized lyrics of the song that 
 Requirements:
 
 ```
-pip3 install --upgrade spotify-cli		# control spotify thru cli
-pip install spotdl						# downloads mp3
-pip install langid						# for language detection
-pip install cutlet						# Jap to Romaji
-pip install unidic-lite					# Jap dictionary
-pip3 install syrics						# downloads lyrics from spotify
-python3 -m pip install cyrtranslit		$ Rus to Latin
+pip3 install --upgrade spotify-cli    # control spotify thru cli
+pip install spotdl                    # downloads mp3
+pip install langid                    # for language detection
+pip install cutlet                    # Jap to Romaji
+pip install unidic-lite               # Jap dictionary
+pip3 install syrics                   # downloads lyrics from spotify
+python3 -m pip install cyrtranslit    # Rus to Latin
 ```
 >you need to configure syrics [sp_dc](https://github.com/akashrchandran/syrics/wiki/Finding-sp_dc)
 >
 >after getting sp_dc create config file
-
-Terminal:
-```syrics --config```
+```
+syrics --config
+```
 
 it could be found here if you want to manually edit it after creating
 
-```~/.config/syrics/config.json```
+```
+~/.config/syrics/config.json
+```
 
 something like this
 
@@ -46,12 +48,17 @@ something like this
 >}
 
 ```
-sudo apt install util-linux cargo			# for "script command (terminal output to file)" and installation of pinyin-tool
-cargo install pinyin-tool					# Chi to Pinyin
-sudo cp ~/.cargo/bin/pinyin-tool /usr/bin	# copy pinyin-tool to /usr/bin
+# for "script command (terminal output to file)" and installation of pinyin-tool
+sudo apt install util-linux cargo
+
+# Chi to Pinyin
+cargo install pinyin-tool
+
+# copy pinyin-tool to /usr/bin
+sudo cp ~/.cargo/bin/pinyin-tool /usr/bin
 ```
 
-You can skip this part: Install spotify client, you can use spotify web
+You can skip this part: Install spotify client, you can just use spotify web
 ```
 curl -sS https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg | sudo gpg --dearmor --yes -o /etc/apt/trusted.gpg.d/spotify.gpg
 echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
@@ -59,9 +66,9 @@ echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sou
 sudo apt update && sudo apt install spotify-client
 ```
 
+Kor to Romaja
 build and install kroman from https://github.com/victorteokw/kroman
 ```
-# Kor to Romaja
 git clone https://github.com/victorteokw/kroman.git
 cd kroman
 sudo make install
@@ -77,20 +84,17 @@ apply this link to [Redirect URI ](https://asia-east2-spotify-cli-283006.cloudfu
 
 click on the created app and click on setting
 
-copy and save your
-
-Client ID and Client secret
+copy and save your Client ID and Client secret
 
 run and insert your Client ID and Client secret via terminal to spotify-cli
-
-Terminal:
 ```
-$ spotify auth login --client-id XXXXX --client-secret YYYYY
+spotify auth login --client-id XXXXX --client-secret YYYYY
 ```
       
-Also put a client ID/Secret on "./spotify_downloader.sh"
->#!/bin/bash
-># https://github.com/GitEin11/
+edit "./spotify_downloader.sh" insert your client ID/Secret
+>\#!/bin/bash
+>
+>\# https://github.com/GitEin11/
 >
 >cd $PWD
 >
