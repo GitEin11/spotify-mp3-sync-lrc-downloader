@@ -67,7 +67,7 @@ sudo apt update && sudo apt install spotify-client
 ```
 
 Kor to Romaja
-build and install kroman from https://github.com/victorteokw/kroman
+build and install kroman
 ```
 git clone https://github.com/victorteokw/kroman.git
 cd kroman
