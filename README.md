@@ -5,6 +5,9 @@ This script downloads the mp3 file and the synchronized lyrics of the song that 
 Requirements:
 
 ```
+sudo add-apt-repository universe
+sudo apt update
+sudo apt install eyed3                # for embedding lyrics to mp3
 pip3 install --upgrade spotify-cli    # control spotify thru cli
 pip install spotdl                    # downloads mp3
 pip install langid                    # for language detection
