@@ -13,7 +13,9 @@ wsl --set-default-version 1
 
 open ubuntu wsl
 ```
+sudo add-apt-repository universe
 sudo apt update
+sudo apt install eyed3
 sudo apt install python3-pip
 pip install -U urllib3
 pip3 install --upgrade spotify-cli
