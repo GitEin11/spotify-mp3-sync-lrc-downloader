@@ -281,31 +281,39 @@ rm -f ./data/time
 rm -f ./data/title
 rm -f ./data/url
 
-echo "Show mp3 file? - $title"
-options=("Yes" "No")
+if [ -f "$FILE2" ]; then
+	# remove existing embedded lyrics
+	eyeD3 --remove-all-lyrics "$FILE"
+	# replace embedded lyrics
+	eyeD3 --add-lyrics="$FILE2" "$FILE"
+	clear
 
-select opt in "${options[@]}"
-do
-	case $opt in
+	echo "Show mp3 file? - $title"
+	options=("Yes" "No")
+
+	select opt in "${options[@]}"
+	do
+		case $opt in
 	
-		"Yes")
+			"Yes")
 		
-		# WSL
-		cmd.exe /C explorer.exe /select, "$fullpath"
+			# WSL
+			cmd.exe /C explorer.exe /select, "$fullpath"
 		
-		# (linux)
-		# gdbus call --session --dest org.freedesktop.FileManager1 --object-path /org/freedesktop/FileManager1 --method org.freedesktop.FileManager1.ShowItems "['file://$FILE']" ""
+			# (linux)
+			# gdbus call --session --dest org.freedesktop.FileManager1 --object-path /org/freedesktop/FileManager1 --method org.freedesktop.FileManager1.ShowItems "['file://$FILE']" ""
 		
-		exit
-		;;
-		
-		
-		"No")
-		exit
-		;;
+			exit
+			;;
 		
 		
-		*) echo "Invalid option $REPLY";;
+			"No")
+			exit
+			;;
 		
-	esac
-done
+		
+			*) echo "Invalid option $REPLY";;
+		
+		esac
+	done
+fi
