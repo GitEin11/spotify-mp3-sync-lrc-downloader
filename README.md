@@ -15,6 +15,7 @@ pip install cutlet                    # Jap to Romaji
 pip install unidic-lite               # Jap dictionary
 pip3 install syrics                   # downloads lyrics from spotify
 python3 -m pip install cyrtranslit    # Rus to Latin
+pip install syncedlyrics
 ```
 >you need to configure syrics [sp_dc](https://github.com/akashrchandran/syrics/wiki/Finding-sp_dc)
 >
